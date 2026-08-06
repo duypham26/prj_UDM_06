@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RemoteDesktop.Shared
+namespace RemoteDesktop.Shared.Protocol
 {
-    public class Class1
+    internal class Constants
     {
     }
 }
