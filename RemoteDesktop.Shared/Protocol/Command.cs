@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RemoteDesktop.Shared.Protocol
+﻿namespace RemoteDesktop.Shared.Protocol
 {
-    internal class Command
+    public enum Command
     {
+        StartSession,
+        StopSession,
+        RequestControl,
+        ReleaseControl
     }
 }
