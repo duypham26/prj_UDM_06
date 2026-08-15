@@ -13,7 +13,7 @@ namespace RemoteDesktop.Shared.Protocol
         ConnectAccept,
         ConnectReject,
         //màn hình
-        Screenframe,
+        ScreenFrame,
         //điều khiển chuột
         MouseMove,
         MouseDown,
@@ -22,8 +22,10 @@ namespace RemoteDesktop.Shared.Protocol
         // điều khiển bàn phím
         KeyDown,
         KeyUp,
-        // tín hiệu kết nối
+        //phiên điều khiển 
         Disconnect,
+        EmergencyStop, 
+        //kiểm tra kết nối
         Heartbeat
     }
 }
