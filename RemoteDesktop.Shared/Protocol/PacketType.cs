@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,24 +8,29 @@ namespace RemoteDesktop.Shared.Protocol
 {
     public enum PacketType
     {
-        //kết nối
+        // kết nối
         ConnectRequest,
         ConnectAccept,
         ConnectReject,
-        //màn hình
+
+        // màn hình
         ScreenFrame,
-        //điều khiển chuột
+
+        // điều khiển chuột
         MouseMove,
         MouseDown,
         MouseUp,
         MouseWheel,
+
         // điều khiển bàn phím
         KeyDown,
         KeyUp,
-        //phiên điều khiển 
+
+        // phiên điều khiển
         Disconnect,
-        EmergencyStop, 
-        //kiểm tra kết nối
+        EmergencyStop,
+
+        // kiểm tra kết nối
         Heartbeat
     }
 }

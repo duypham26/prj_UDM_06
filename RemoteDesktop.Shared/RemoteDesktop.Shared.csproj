@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Protocol\Command.cs" />
-    <Compile Include="Protocol\Constants.cs" />
-  
-    <Compile Include="Protocol\PacketType.cs" />
+	  <Compile Include="Protocol\Command.cs" />
+	  <Compile Include="Protocol\Constants.cs" />
+	  <Compile Include="Protocol\Packet.cs" />
+	  <Compile Include="Protocol\PacketType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Packets\" />
