@@ -54,6 +54,9 @@
     <Compile Include="UI\Mainform.Designer.cs">
       <DependentUpon>Mainform.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\waiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,9 +65,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Mainform.resx">
       <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\waiting.resx">
+      <DependentUpon>waiting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +85,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICONPRJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LTMICON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LTMICON1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteDesktop.Client", "RemoteDesktop.Client\RemoteDesktop.Client.csproj", "{43790976-CC30-4018-8136-B46872CC6696}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteDesktop.Server", "..\prj_UDM_06\RemoteDesktop.Server\RemoteDesktop.Server.csproj", "{EAAF0AB0-524F-4772-803D-0FEE7C864DA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{43790976-CC30-4018-8136-B46872CC6696}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43790976-CC30-4018-8136-B46872CC6696}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43790976-CC30-4018-8136-B46872CC6696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAAF0AB0-524F-4772-803D-0FEE7C864DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAAF0AB0-524F-4772-803D-0FEE7C864DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAAF0AB0-524F-4772-803D-0FEE7C864DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAAF0AB0-524F-4772-803D-0FEE7C864DA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
