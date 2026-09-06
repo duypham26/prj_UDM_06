@@ -14,7 +14,7 @@ namespace NewRemoteDesktop.Server.Network
         private readonly NetworkStream _stream;
         private bool _isConnected;
 
-        public event Action<byte[]> OnPacketReceived;
+        public event Action<byte, byte[]> OnPacketReceived;
         public event Action<ClientHandler> OnDisconnected;
 
         public ClientHandler(TcpClient client)
@@ -31,22 +31,29 @@ namespace NewRemoteDesktop.Server.Network
 
         private async Task ReceiveLoopAsync()
         {
-            byte[] buffer = new byte[8192];
             try
             {
                 while (_isConnected && _client.Connected)
                 {
-                    int bytesRead = await _stream.ReadAsync(buffer, 0, buffer.Length);
-                    if (bytesRead == 0) break;
+                    byte[] header = new byte[5];
+                    int bytesRead = await ReadExactAsync(header, 5);
+                    if (bytesRead < 5) break;
 
-                    byte[] data = new byte[bytesRead];
-                    Array.Copy(buffer, data, bytesRead);
-                    OnPacketReceived?.Invoke(data);
+                    byte packetType = header[0];
+                    int payloadLength = BitConverter.ToInt32(header, 1);
+
+                    byte[] payload = new byte[payloadLength];
+                    if (payloadLength > 0)
+                    {
+                        await ReadExactAsync(payload, payloadLength);
+                    }
+
+                    OnPacketReceived?.Invoke(packetType, payload);
                 }
             }
             catch (Exception)
             {
-                // Mất kết nối hoặc lỗi đọc luồng
+                // Mất kết nối hoặc lỗi luồng
             }
             finally
             {
@@ -54,11 +61,24 @@ namespace NewRemoteDesktop.Server.Network
             }
         }
 
-        public async Task SendAsync(byte[] data)
+        private async Task<int> ReadExactAsync(byte[] buffer, int count)
+        {
+            int totalRead = 0;
+            while (totalRead < count)
+            {
+                int read = await _stream.ReadAsync(buffer, totalRead, count - totalRead);
+                if (read == 0) break;
+                totalRead += read;
+            }
+            return totalRead;
+        }
+
+        public async Task SendAsync(byte packetType, byte[] payload)
         {
             if (_isConnected && _stream != null)
             {
-                await _stream.WriteAsync(data, 0, data.Length);
+                byte[] packet = PacketSender.CreatePacket(packetType, payload);
+                await _stream.WriteAsync(packet, 0, packet.Length);
             }
         }
 
