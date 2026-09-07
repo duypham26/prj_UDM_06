@@ -1,0 +1,4 @@
+C:\Users\LENOVO LOQ\source\repos\ImageEncoder\ImageEncoder\obj\Debug\net10.0\ImageEncoder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO LOQ\source\repos\ImageEncoder\ImageEncoder\obj\Debug\net10.0\ImageEncoder.AssemblyInfoInputs.cache
+C:\Users\LENOVO LOQ\source\repos\ImageEncoder\ImageEncoder\obj\Debug\net10.0\ImageEncoder.AssemblyInfo.cs
+C:\Users\LENOVO LOQ\source\repos\ImageEncoder\ImageEncoder\obj\Debug\net10.0\ImageEncoder.csproj.CoreCompileInputs.cache
