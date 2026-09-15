@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImageEncoder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3620f45c920fa9fa575a6f171aed17abdf4486f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImageEncoder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImageEncoder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

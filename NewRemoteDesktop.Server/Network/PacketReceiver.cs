@@ -5,11 +5,25 @@ namespace NewRemoteDesktop.Server.Network
     {
         public static void ParsePacket(byte[] rawData, out byte packetType, out byte[] payload)
         {
-            // Xử lý bóc tách dữ liệu gói tin tùy theo giao thức của nhóm
+            // Validate rawData length first
+            if (rawData == null || rawData.Length < 5)
+            {
+                throw new ArgumentException("Invalid packet: insufficient header length.");
+            }
+
             packetType = rawData[0];
             int length = BitConverter.ToInt32(rawData, 1);
+
+            if (length < 0 || rawData.Length < 5 + length)
+            {
+                throw new ArgumentException("Invalid packet: payload length mismatch.");
+            }
+
             payload = new byte[length];
-            Array.Copy(rawData, 5, payload, 0, length);
+            if (length > 0)
+            {
+                Array.Copy(rawData, 5, payload, 0, length);
+            }
         }
     }
 }
