@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>RemoteDesktop.Client</RootNamespace>
+    <AssemblyName>RemoteDesktop.Client</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RemoteDesktop.Shared\RemoteDesktop.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
